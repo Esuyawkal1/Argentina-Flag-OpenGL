@@ -74,7 +74,23 @@ The project is developed collaboratively using GitHub.
 
 ### Notes:
 The utility module acts as the foundation of the project, enabling reusable math and rendering functions used by both flag.cpp and sun.cpp.
-* Melat Melkamu — Utility and mathematical helper system
+### Melat Melkamu
+* Sun of May rendering module (Bezier-based ray generation, facial features, and sun drawing system
+My contribution to the project includes implementing the Sun of May rendering system in OpenGL.
+### Responsibilities:
+- Implemented Bezier-curve based ray generation
+- Designed alternating straight and curved sun rays
+- Created facial features (eyes, eyebrows, nose, lips)
+- Managed scaling logic to fit the sun inside the white stripe
+- Developed modular sun.cpp and sun.h
+
+### Files Contributed:
+- sun.cpp
+- sun.h
+
+### Notes:
+The sun rendering is fully modular and integrated into the main flag rendering system through draw_sun() function called from flag.cpp.
+
 
 # GitHub Workflow
 
