@@ -51,7 +51,28 @@ The project is developed collaboratively using GitHub.
 * OpenGL
 * GLUT / freeglut
 
-
+# Compilation & Execution (Windows)
+Follow the steps below to clone, compile, and run the project on a Windows system.
+### Requirements
+Before compiling the project, make sure the following are installed:
+* MinGW-w64 / GCC compiler
+* OpenGL libraries
+* FreeGLUT
+Also ensure that g++ is added to your system PATH.
+### Step 1 — Clone the Repository
+** Clone the project from GitHub and move into the project directory.
+git clone https://github.com/esuyawkal1/Argentina-Flag-OpenGL.git
+cd Argentina-Flag-OpenGL
+### Step 2 — Compile the Project
+** Use the following command to compile all source files and link the required OpenGL and FreeGLUT libraries.
+g++ main.cpp flag.cpp sun.cpp utils.cpp -o argentina_flag -lfreeglut -lopengl32 -lglu32
+** After successful compilation, an executable file named argentina_flag.exe will be generated.
+### Step 3 — Run the Program
+** Execute the compiled application using:
+argentina_flag.exe
+** This will open the OpenGL window and run the project.
+### Note
+Make sure freeglut.dll is available in the project folder or inside the MinGW bin directory before running the program.
 
 # Team Members
 
