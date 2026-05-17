@@ -60,17 +60,18 @@ Before compiling the project, make sure the following are installed:
 * FreeGLUT
 Also ensure that g++ is added to your system PATH.
 ### Step 1 — Clone the Repository
-** Clone the project from GitHub and move into the project directory.
+* Clone the project from GitHub and move into the project directory.
 git clone https://github.com/esuyawkal1/Argentina-Flag-OpenGL.git
+
 cd Argentina-Flag-OpenGL
 ### Step 2 — Compile the Project
-** Use the following command to compile all source files and link the required OpenGL and FreeGLUT libraries.
+* Use the following command to compile all source files and link the required OpenGL and FreeGLUT libraries.
 g++ main.cpp flag.cpp sun.cpp utils.cpp -o argentina_flag -lfreeglut -lopengl32 -lglu32
-** After successful compilation, an executable file named argentina_flag.exe will be generated.
+* After successful compilation, an executable file named argentina_flag.exe will be generated.
 ### Step 3 — Run the Program
-** Execute the compiled application using:
+* Execute the compiled application using:
 argentina_flag.exe
-** This will open the OpenGL window and run the project.
+* This will open the OpenGL window and run the project.
 ### Note
 Make sure freeglut.dll is available in the project folder or inside the MinGW bin directory before running the program.
 
@@ -78,6 +79,8 @@ Make sure freeglut.dll is available in the project folder or inside the MinGW bi
 
 ### Esuyawkal fentahun 
 * Project setup and flag rendering
+### Tsigereda Mitiku
+  * Compilation and Execution guide
 ### Yigermal Kassie
 * Utility and mathematical helper system (vector math, color system, and shape rendering utilities)
  My contribution to the project includes developing the core utility system used across the entire OpenGL project.
