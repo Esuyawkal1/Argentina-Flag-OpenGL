@@ -55,8 +55,10 @@ The project is developed collaboratively using GitHub.
 
 # Team Members
 
-* Esuyawkal fentahun — Project setup and flag rendering
-* Yigermal Kassie — Utility and mathematical helper system (vector math, color system, and shape rendering utilities)
+### Esuyawkal fentahun 
+* Project setup and flag rendering
+### Yigermal Kassie
+* Utility and mathematical helper system (vector math, color system, and shape rendering utilities)
  My contribution to the project includes developing the core utility system used across the entire OpenGL project.
 
 ### Responsibilities:
