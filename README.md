@@ -61,9 +61,10 @@ Before compiling the project, make sure the following are installed:
 Also ensure that g++ is added to your system PATH.
 ### Step 1 — Clone the Repository
 * Clone the project from GitHub and move into the project directory.
+  
 git clone https://github.com/esuyawkal1/Argentina-Flag-OpenGL.git
 
-cd Argentina-Flag-OpenGL
+   cd Argentina-Flag-OpenGL
 ### Step 2 — Compile the Project
 * Use the following command to compile all source files and link the required OpenGL and FreeGLUT libraries.
 g++ main.cpp flag.cpp sun.cpp utils.cpp -o argentina_flag -lfreeglut -lopengl32 -lglu32
