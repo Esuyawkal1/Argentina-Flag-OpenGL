@@ -1,34 +1,69 @@
-#ifndef UTILS_H
-#define UTILS_H
-
+#include "utils.h"
 #include <cmath>
-#include <GL/glut.h>
 
-constexpr float PI = 3.14159265358979323846f;
-constexpr float TWO_PI = 2.0f * PI;
+float DEG(float d) {
+    return d * PI / 180.0f;
+}
 
-float DEG(float d);
+void COL_BLUE(float a) {
+    glColor4f(0.455f, 0.675f, 0.875f, a);
+}
 
-void COL_BLUE(float a = 1.0f);
-void COL_WHITE(float a = 1.0f);
-void COL_GOLD(float a = 1.0f);
-void COL_DARK_GOLD(float a = 1.0f);
-void COL_DARK(float a = 1.0f);
+void COL_WHITE(float a) {
+    glColor4f(1.0f, 1.0f, 1.0f, a);
+}
 
-struct V2 {
-    float x = 0.0f;
-    float y = 0.0f;
+void COL_GOLD(float a) {
+    glColor4f(0.965f, 0.706f, 0.055f, a);
+}
 
-    V2() = default;
-    V2(float nx, float ny);
+void COL_DARK_GOLD(float a) {
+    glColor4f(0.784f, 0.525f, 0.039f, a);
+}
 
-    V2 operator+(const V2& b) const;
-    V2 operator*(float f) const;
+void COL_DARK(float a) {
+    glColor4f(0.522f, 0.204f, 0.039f, a);
+}
 
-    V2 rotate(float angle_rad) const;
-};
+V2::V2(float nx, float ny) : x(nx), y(ny) {}
 
-void circle_fill(float cx, float cy, float r, int seg);
-void circle_ring(float cx, float cy, float r, float w, int seg);
+V2 V2::operator+(const V2& b) const {
+    return V2(x + b.x, y + b.y);
+}
 
-#endif
+V2 V2::operator*(float f) const {
+    return V2(x * f, y * f);
+}
+
+V2 V2::rotate(float angle_rad) const {
+    float c = std::cos(angle_rad);
+    float s = std::sin(angle_rad);
+    return V2(x * c - y * s, x * s + y * c);
+}
+
+void circle_fill(float cx, float cy, float r, int seg) {
+    glBegin(GL_TRIANGLE_FAN);
+    glVertex2f(cx, cy);
+
+    for (int i = 0; i <= seg; ++i) {
+        float a = TWO_PI * i / seg;
+        glVertex2f(cx + r * std::cos(a), cy + r * std::sin(a));
+    }
+
+    glEnd();
+}
+
+void circle_ring(float cx, float cy, float r, float w, int seg) {
+    glBegin(GL_TRIANGLE_STRIP);
+
+    for (int i = 0; i <= seg; ++i) {
+        float a = TWO_PI * i / seg;
+        float c = std::cos(a);
+        float s = std::sin(a);
+
+        glVertex2f(cx + (r - w) * c, cy + (r - w) * s);
+        glVertex2f(cx + (r + w) * c, cy + (r + w) * s);
+    }
+
+    glEnd();
+}
