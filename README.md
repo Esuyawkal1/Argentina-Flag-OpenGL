@@ -18,25 +18,25 @@ The project is developed collaboratively using GitHub.
 
 # Project Structure
 
-Argentina-Flag-OpenGL/
+** Argentina-Flag-OpenGL/
 
-│── README.md
+* README.md
 
-│── .gitignore
+* .gitignore
 
-│── main.cpp
+* main.cpp
 
-│── flag.h
+* flag.h
 
-│── flag.cpp
+* flag.cpp
 
-│── sun.h
+ * sun.h
 
-│── sun.cpp
+* sun.cpp
 
-│── utils.h
+* utils.h
 
-│── utils.cpp
+* utils.cpp
 
 # Current Features
 
