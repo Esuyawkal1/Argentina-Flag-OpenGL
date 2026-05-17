@@ -18,16 +18,24 @@ The project is developed collaboratively using GitHub.
 
 # Project Structure
 
-text id="n6qiy5"
 Argentina-Flag-OpenGL/
+
 │── README.md
+
 │── .gitignore
+
 │── main.cpp
+
 │── flag.h
+
 │── flag.cpp
+
 │── sun.h
+
 │── sun.cpp
+
 │── utils.h
+
 │── utils.cpp
 
 # Current Features
@@ -47,7 +55,7 @@ Argentina-Flag-OpenGL/
 
 # Team Members
 
-*Esuyawkal fentahun — Project setup and flag rendering
+* Esuyawkal fentahun — Project setup and flag rendering
 * Yigermal Kassie — Sun of May rendering module
 * Melat Melkamu — Utility and mathematical helper system
 
