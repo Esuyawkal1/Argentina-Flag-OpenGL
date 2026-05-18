@@ -4,6 +4,7 @@
 
 #include <GL/glut.h>
 float sunRotation = 0.0f;
+float wavePhase = 0.0f;
 void display() {
     glClear(GL_COLOR_BUFFER_BIT);
 
@@ -21,29 +22,16 @@ void display() {
     float fW = static_cast<float>(W);
     float fH = static_cast<float>(H);
 
-    COL_BLUE();
-    glBegin(GL_QUADS);
-        glVertex2f(0.0f, fH);
-        glVertex2f(fW,   fH);
-        glVertex2f(fW,   2.0f * stripe);
-        glVertex2f(0.0f, 2.0f * stripe);
-    glEnd();
+  float amplitude = stripe * 0.04f;
 
-    COL_WHITE();
-    glBegin(GL_QUADS);
-        glVertex2f(0.0f, 2.0f * stripe);
-        glVertex2f(fW,   2.0f * stripe);
-        glVertex2f(fW,   stripe);
-        glVertex2f(0.0f, stripe);
-    glEnd();
+COL_BLUE();
+draw_waving_stripe(2.0f * stripe, fH, fW, amplitude, wavePhase);
 
-    COL_BLUE();
-    glBegin(GL_QUADS);
-        glVertex2f(0.0f, stripe);
-        glVertex2f(fW,   stripe);
-        glVertex2f(fW,   0.0f);
-        glVertex2f(0.0f, 0.0f);
-    glEnd();
+COL_WHITE();
+draw_waving_stripe(stripe, 2.0f * stripe, fW, amplitude, wavePhase);
+
+COL_BLUE();
+draw_waving_stripe(0.0f, stripe, fW, amplitude, wavePhase);
 
    
     const float CORE_RADIUS     = 44.0f;
@@ -70,7 +58,7 @@ draw_sun(0.0f, 0.0f, 1.0f);
 glPopMatrix();
 glutSwapBuffers();
     sunRotation += 0.03f;
-
+    wavePhase += 0.03f;
 if (sunRotation >= 360.0f)
     sunRotation -= 360.0f;
 
