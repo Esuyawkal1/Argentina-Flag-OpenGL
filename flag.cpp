@@ -3,7 +3,7 @@
 #include "utils.h"
 
 #include <GL/glut.h>
-
+float sunRotation = 0.0f;
 void display() {
     glClear(GL_COLOR_BUFFER_BIT);
 
@@ -45,7 +45,7 @@ void display() {
         glVertex2f(0.0f, 0.0f);
     glEnd();
 
-    /* ── SUN POSITION + SCALING LOGIC ───────────────────── */
+   
     const float CORE_RADIUS     = 44.0f;
     const float RAY_START       = 43.0f;
     const float LONGEST_RAY_LEN = 50.0f;
