@@ -38,11 +38,15 @@ The project is developed collaboratively using GitHub.
 
 * utils.cpp
 
-# Current Features
+# Features
 
 * OpenGL window initialization
-* Responsive rendering system
-* Argentina flag background rendering
+* Authentic Argentina flag colors
+* Detailed “Sun of May” rendering
+* Bezier curve based sun rays
+* Smooth anti-aliased rendering
+* Animated rotation effect
+* Responsive scaling with window resize
 * Modular project architecture
 
 # Technologies Used
@@ -127,7 +131,10 @@ This repository is maintained collaboratively using:
 * individual contributions
 
 Each member contributes through separate commits and source modules.
-
+# Challenges Faced
+* Creating smooth Bezier-based sun rays
+* Keeping the sun perfectly centered and scaled
+* Maintaining detailed facial rendering during transformations
 # Educational Purpose
 
 This project was developed for academic purposes as part of a Computer Graphics coursework assignment.
