@@ -20,6 +20,7 @@
 constexpr float PI = 3.14159265358979323846f;
 constexpr float TWO_PI = 2.0f * PI;
 static GLfloat sunRotation = 0.0f;
+static GLfloat waveOffset = 0.0f;
 inline float DEG(float d) {
     return d * PI / 180.0f;
 }
@@ -326,7 +327,20 @@ static void draw_sun(float cx, float cy, float scale) {
     glLineWidth(1.0f);
 }
 
+static void drawWavingStripe(float yBottom, float yTop, float width) {
+    const int segments = 200;
 
+    glBegin(GL_QUAD_STRIP);
+    for (int i = 0; i <= segments; i++) {
+        float x = width * i / segments;
+
+        float offset = 8.0f * std::sin(0.02f * x + waveOffset);
+
+        glVertex2f(x, yBottom + offset);
+        glVertex2f(x, yTop + offset);
+    }
+    glEnd();
+}
 static void display() {
     glClear(GL_COLOR_BUFFER_BIT);
 
@@ -344,30 +358,15 @@ static void display() {
     float fW = static_cast<float>(W);
     float fH = static_cast<float>(H);
 
-    COL_BLUE();
-    glBegin(GL_QUADS);
-        glVertex2f(0.0f, fH);
-        glVertex2f(fW,   fH);
-        glVertex2f(fW,   2.0f * stripe);
-        glVertex2f(0.0f, 2.0f * stripe);
-    glEnd();
+    
+COL_BLUE();
+drawWavingStripe(2.0f * stripe, fH, fW);
 
-    COL_WHITE();
-    glBegin(GL_QUADS);
-        glVertex2f(0.0f, 2.0f * stripe);
-        glVertex2f(fW,   2.0f * stripe);
-        glVertex2f(fW,   stripe);
-        glVertex2f(0.0f, stripe);
-    glEnd();
+COL_WHITE();
+drawWavingStripe(stripe, 2.0f * stripe, fW);
 
-    COL_BLUE();
-    glBegin(GL_QUADS);
-        glVertex2f(0.0f, stripe);
-        glVertex2f(fW,   stripe);
-        glVertex2f(fW,   0.0f);
-        glVertex2f(0.0f, 0.0f);
-    glEnd();
-
+COL_BLUE();
+drawWavingStripe(0.0f, stripe, fW);
 
     const float CORE_RADIUS     = 44.0f;
     const float RAY_START       = 43.0f;
@@ -408,6 +407,7 @@ static void display() {
 
     if (sunRotation >= 360.0f)
         sunRotation -= 360.0f;
+    waveOffset += 0.05f;
 
     glutPostRedisplay();
 
