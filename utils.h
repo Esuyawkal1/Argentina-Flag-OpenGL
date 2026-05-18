@@ -30,5 +30,6 @@ struct V2 {
 
 void circle_fill(float cx, float cy, float r, int seg);
 void circle_ring(float cx, float cy, float r, float w, int seg);
-
+void draw_waving_stripe(float y1, float y2, float width,
+                       float amplitude, float phase);
 #endif
