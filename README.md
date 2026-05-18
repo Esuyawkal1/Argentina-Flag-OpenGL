@@ -18,7 +18,7 @@ The project is developed collaboratively using GitHub.
 
 # Project Structure
 
-** Argentina-Flag-OpenGL/
+### Argentina-Flag-OpenGL/
 
 * README.md
 
@@ -121,7 +121,7 @@ The sun rendering is fully modular and integrated into the main flag rendering s
 
 This repository is maintained collaboratively using:
 
-* branches
+* Fork, invites
 * pull requests
 * modular commits
 * individual contributions
