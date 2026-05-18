@@ -67,3 +67,21 @@ void circle_ring(float cx, float cy, float r, float w, int seg) {
 
     glEnd();
 }
+void draw_waving_stripe(float y1, float y2, float width,
+                       float amplitude, float phase)
+{
+    const int segments = 200;
+    const float frequency = 2.0f * PI / width * 2.0f;
+
+    glBegin(GL_QUAD_STRIP);
+
+    for (int i = 0; i <= segments; ++i) {
+        float x = width * static_cast<float>(i) / segments;
+        float offset = amplitude * std::sin(frequency * x + phase);
+
+        glVertex2f(x, y1 + offset);
+        glVertex2f(x, y2 + offset);
+    }
+
+    glEnd();
+}
