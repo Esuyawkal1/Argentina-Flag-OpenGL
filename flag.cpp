@@ -62,10 +62,19 @@ void display() {
     float sun_cx = fW * 0.5f;
     float sun_cy = stripe * 1.5f;
 
-   
-    draw_sun(sun_cx, sun_cy, scale);
+    glPushMatrix();
+glTranslatef(sun_cx, sun_cy, 0.0f);
+glRotatef(sunRotation, 0.0f, 0.0f, 1.0f);
+glScalef(scale, scale, 1.0f);
+draw_sun(0.0f, 0.0f, 1.0f);
+glPopMatrix();
+glutSwapBuffers();
+    sunRotation += 0.03f;
 
-    glutSwapBuffers();
+if (sunRotation >= 360.0f)
+    sunRotation -= 360.0f;
+
+glutPostRedisplay();
 }
 
 void reshape(int w, int h) {
